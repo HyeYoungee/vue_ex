@@ -18,12 +18,16 @@ export default{
     }
   },
   computed: {
+    //numbers의 값이 변경될 경우에만 실행
     evenNumbers() {
+      console.log('evenNumbers 실행')
       return this.numbers.filter(n => n % 2 === 0)
     }
   },
   methods: {
+    //data내의 어떤 값이든 변경되면 실행 
     even(numbers) {
+      console.log('even 실행')
       return numbers.filter(number => number % 2 === 0)
     }
   }
@@ -58,7 +62,17 @@ export default{
 
     <hr>
     <h2>필터</h2>
-    <li v-for="n in evenNumbers">{{ n }}</li>
+    <ul>
+      <li v-for="n in evenNumbers">{{ n }}</li>
+    </ul>
+    <button @click="numbers.push(2)"> + </button>
+    
+    <hr>
+    <ul v-for="numbers in sets" :key="numbers">
+      <li v-for="n in even(numbers)" :key="n">{{ n }}</li>
+    </ul>
+    <button @click="sets[0].push(1)"> + </button>
+    
 
 
   </div>
