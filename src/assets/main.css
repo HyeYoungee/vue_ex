@@ -37,3 +37,9 @@ a,
 hr{
   margin-bottom: 20px;
 }
+
+.layout{
+  padding: 20px;
+  border-top: 2px solid #ccc;
+  margin-top: 40px;
+}
